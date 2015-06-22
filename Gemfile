@@ -15,6 +15,13 @@ group :development, :test do
   gem 'faker'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'rspec-rails'
+  gem 'rspec-activemodel-mocks'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'factory_girl_rails'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
 end
 
 # gem 'bcrypt', '~> 3.1.7'
