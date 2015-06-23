@@ -9,9 +9,16 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'devise'
+gem 'mini_magick'
+gem 'carrierwave'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'byebug'
+  gem 'pry-byebug'
   gem 'faker'
   gem 'web-console', '~> 2.0'
   gem 'spring'
