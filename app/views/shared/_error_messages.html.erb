@@ -1,0 +1,7 @@
+<% if object.errors.any? %>
+<ul class="validation-errors">
+  <% object.errors.full_messages.each do |message| %>
+    <li><i class="fa fa-exclamation-triangle"></i> <%= message %></li>
+  <% end %>
+</ul>
+<% end %>
