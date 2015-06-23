@@ -8,7 +8,14 @@
 </head>
 <body>
 
+<% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "flash" %>
+<% end %>
+
 <%= yield %>
+
+<%= ENV["TWITTER_KEY"] %><br />
+<%= ENV["TWITTER_SECRET"] %>
 
 </body>
 </html>
