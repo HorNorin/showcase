@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'mini_magick'
 gem 'carrierwave'
+gem 'bootstrap-sass'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'font-awesome-rails'

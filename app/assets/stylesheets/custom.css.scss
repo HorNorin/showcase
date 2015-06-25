@@ -1,3 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 /* variables */
 $bodyColor: #202020;
 $borderColor: #494949;
@@ -6,234 +9,122 @@ $mainTextColor: #CCCCCC;
 $brightWhileColor: #FFFFFF;
 $yellowForeColor: #FBAF22;
 $yellowBackColor: rgba(251, 175, 34, 0.6);
-$lightBlueColor: #809FD3;
+$lightBlueColor: #337AB7;
 $blueBackColor: rgba(0, 109, 255, 0.7);
 $black: #000000;
-
-/* mixin */
-@mixin backgroundColor($color) {
-  background: none repeat scroll 0% 0% $color !important;
-}
-
-a, a:hover, a:active, a:visited {
-  text-decoration: none;
-  color: $yellowForeColor;
-}
 
 body {
   font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif !important;
   font-size: 14px !important;
+  color: #eee;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-  @include backgroundColor($bodyColor);
+  background-color: $bodyColor;
 }
 
-#container {
-  width: 960px;
-  margin: 0 auto;
-  color: $mainTextColor;
-}
-
-/* header bar */
-#header {
-  width: 100%;
-  height: 55px;
-  padding: 2px 0;
-  margin-bottom: 20px;
+hr {
   border-color: $borderColor;
-  @include backgroundColor($headerColor);
-  
-  > ul {
-    width: 70%; /* 960px */
-    margin: 0 auto;
-    height: 100%;
-    
-    > li {
-      float: left;
-      height: 100%;
-      width: 12.5%; /* 120px / 960px */
-      text-align: center;
-      
-      &:hover {
-        @include backgroundColor($headerColor);
-      }
-      
-      ul {
-        opacity: 0;
-        width: 100%;
-        visibility: hidden;
-        position: relative;
-        top: 22px;
-        transition: opacity 0.5s ease;
-      }
-      
-      &:hover ul {
-        opacity: 1;
-        visibility: visible;
-        background-color: $headerColor;
-      }
-      
-      a {
-        color: $yellowForeColor;
-        display: block;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-      
-      > ul {
-        > li {
-          padding: 7px 0;
-          border-bottom: 1px solid $borderColor;
-          &:hover {
-            background-color: $yellowBackColor;
-          }
-          &:hover a{
-            color: $brightWhileColor;
-          }
-        }
-      }
-    }
-    
-    > li.link {
-      padding: 19px 0;
-      box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-    }
-
-    > li.pull-right {
-      float: right;
-    }
-
-    > li.small {
-      width: 6.25%; /* 60px / 960px */
-    }
-
-    > li.border > a{
-      border-left: 1px solid $borderColor;
-    }
-
-    > li#search {
-      width: 41.6666667%; /* 400px / 960px */
-    }
-  }
-
-  #logo {
-    width: 15.625%; /* 150px / 960px */
-    a {
-      margin: 1px 0;
-      padding: 15px 0;
-      display: block;
-      color: $yellowForeColor;
-      font-size: 25px;
-      letter-spacing: -0.05em;
-      text-decoration: none;
-      text-transform: uppercase;
-      text-shadow: 0 -1px 0 $yellowBackColor;
-      border-color: $borderColor;
-      @include backgroundColor($headerColor);
-      transition: color 0.5s ease;
-
-      &:hover {
-        color: $brightWhileColor;
-      }
-    }
-  }
 }
 
-#search {
-  form {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    padding-left: 1.25%; /* 5px / 400px */
-    overflow: hidden;
-    border-left: 1px solid $borderColor;
-    
-    input[type=text] {
-      font-family: "FontAwesome";
-      color: $mainTextColor;
-      margin: 10px 0;
-      width: 100%;
-      padding-top: -2px;
-      padding-bottom: 5px;
-      height: 30px;
-      font-size: 14px;
-      border-style: none;
-      background-color: transparent;
-    }
-    
-    input[type=text]:focus {
-      outline: none;
-      border-bottom: 1px solid $borderColor;
-    }
-  }
-}
-/* end header bar */
-
-.form, .form * {
+#signin-with {
   margin: 0;
   padding: 0;
-}
-
-.form {
-  .form-group, .form-group > * {
-    display: block;
-    width: 100%;
-    margin-bottom: 15px;
-    
-    label {
-      color: $mainTextColor;
-      margin-bottom: 7px;
-      transition: color 0.5s ease;
+  list-style-type: none;
+  li {
+    float: left;
+    width: 49%;
+    margin-right: 0.5%;
+    &:last-child {
+      margin-left: 0.5%;
     }
-    
-    input[type=text], input[type=email],
-    input[type=password], textarea {
-      padding: 5px;
-      color: $mainTextColor;
-      border-style: none;
-      border-bottom: 1px solid $borderColor;
-      background-color: transparent;
-      transition: border-color 0.5s ease;
-      width: 99%;
-      
-      &:focus {
-        outline: none;
-        border-color: $mainTextColor;
-      }
+    i {
+      padding-top: 3px;
     }
   }
 }
 
-.form-caption {
-  color: $brightWhileColor;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 0 0 1px $yellowBackColor;//$lightBlueColor;
-  text-align: center;
-  padding-bottom: 15px;
-  margin-bottom: 25px;
-  border-bottom: 1px solid $lightBlueColor;//$lightBlueColor;
+.form-control {
+  outline: none;
+  border-radius: 0;
+  border-style: none;
+  //border-right: 1px solid $borderColor;
+  border-bottom: 1px solid $borderColor;
+  background-color: transparent;
+}
+
+.form-control:focus {
+  box-shadow: none;
 }
 
 .btn {
+  border-radius: 0;
+  width: 100%;
+}
+
+.group {
   padding: 10px;
-  cursor: pointer;
-  display: block;
-  border: none;
-  font-size: 14px;
-  
-  color: $brightWhileColor;
-  border-radius: 3px;
-  outline: none;
-  box-shadow: 0 0 2px $brightWhileColor;
-  background-color: $blueBackColor;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    color: $brightWhileColor;
-    box-shadow: 0 0 1px $lightBlueColor;
-    background-color: rgba(0, 109, 255, 0.5); //rgba(0, 109, 255, 0.7);
+  border: 1px solid $borderColor;
+  > h2 {
+    margin: -11px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+    background-color: $lightBlueColor;
+  }
+}
+
+#search input {
+  color: #999;
+  border-style: none;
+  background-color: transparent;
+  &:focus {
+    outline: none;
+  }
+}
+
+.content {
+  background-color: #3C3C3C;
+}
+
+.left-inner-addon {
+    position: relative;
+}
+.left-inner-addon input {
+    padding-left: 30px;    
+}
+.left-inner-addon span {
+    position: absolute;
+    padding: 10px 12px;
+    pointer-events: none;
+}
+
+.navbar-custom {
+  color: #999;
+  border-radius: 0;
+  border-color: $headerColor;
+  background-color: $headerColor;
+}
+
+.navbar-custom .navbar-nav > li.active a {
+  border-color: $borderColor;
+  background-color: $lightBlueColor;
+}
+
+.navbar-custom .dropdown.open > a:focus {
+  background-color: $lightBlueColor;
+}
+
+.dropdown-inverse {
+  background-color: $headerColor;
+  border-color: $borderColor;
+  &>li>a{
+    color: #999;
+    &:hover{
+      color: #fff;
+      background-color: $lightBlueColor;
+    }
+  }
+  &>.divider {
+    background-color: $borderColor;
   }
 }
 

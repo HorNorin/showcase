@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
 //= require_tree .
 
 var ready = function() {
@@ -30,16 +31,6 @@ var ready = function() {
       document.body.scrollLeft = scroll.left;
     }
   }
-  
-  // toggle label color to make it brigther or darker
-  // when textbox get focus or blur accordingly
-  $(".form-control").on("focus", function(){
-    $(this).prev().css({color: "#FFFFFF"});
-  });
-  
-  $(".form-control").on("blur", function(){
-    $(this).prev().css({color: "#CCCCCC"});
-  });
   
   $("input").attr("autocomplete", "off");
 }
