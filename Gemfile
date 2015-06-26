@@ -9,9 +9,18 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'devise'
+gem 'mini_magick'
+gem 'carrierwave'
+gem 'bootstrap-sass'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'font-awesome-rails'
+gem 'client_side_validations', github: "DavyJonesLocker/client_side_validations", branch: "4-2-stable"
 
 group :development, :test do
   gem 'byebug'
+  gem 'pry-byebug'
   gem 'faker'
   gem 'web-console', '~> 2.0'
   gem 'spring'
