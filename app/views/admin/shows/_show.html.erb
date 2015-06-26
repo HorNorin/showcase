@@ -1,0 +1,8 @@
+<tr>
+  <td><%= show.id %></td>
+  <td><%= link_to show.title, [:admin, show] %></td>
+  <td>
+    <%= link_to "Edit", edit_admin_show_path(show), class: "btn btn-primary" %>
+    <%= link_to "Delete", [:admin, show], method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"} %>
+  </td>
+</tr>

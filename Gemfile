@@ -16,6 +16,10 @@ gem 'bootstrap-sass'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'font-awesome-rails'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+gem 'youtube_addy'
+gem 'remotipart'
 gem 'client_side_validations', github: "DavyJonesLocker/client_side_validations", branch: "4-2-stable"
 
 group :development, :test do

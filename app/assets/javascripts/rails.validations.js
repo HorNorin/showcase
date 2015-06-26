@@ -1,4 +1,4 @@
-$(document).on("ready page:load page:change", function(){
+$(document).on("ready page:load page:change page:update", function(){
   (function() {
     var $, validateElement, validateForm, validatorsFor,
       indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
