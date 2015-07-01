@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require rails.validations
+//= require jquery.remotipart
 //= require_tree .
 
 var ready = function() {
@@ -34,8 +35,20 @@ var ready = function() {
   }
   
   $("input").attr("autocomplete", "off");
-  
-  
+
+  $(":file").on("change", function(){
+    var arr = $(this).val().split("\\");
+    var name = arr[arr.length - 1];
+    $(this).prev().css({color: "#eee"}).text(name);
+  });
+
+  $("textarea").on("focus", function(){
+    $(this).animate({"rows": "5"}, {duration: 50, step: function(now) { $(this).attr("x", now); }});
+  });
+
+  $("textarea").on("blur", function(){
+    $(this).removeAttr("rows");
+  });
 }
 
-$(document).on('ready page:load', ready);
+$(document).on('ready page:load page:change page:update', ready);

@@ -2,9 +2,11 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :omniauthable
+         :recoverable, :rememberable
          
   mount_uploader :image, ImageUploader
+  
+  enum role: [:normal, :moderator, :admin]
   
   validates_presence_of :username, unless: :sign_in_with_omniauth?
   validates_presence_of :email, unless: :sign_in_with_omniauth?

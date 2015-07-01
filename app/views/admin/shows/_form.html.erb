@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 group content">
+    <h2><%= title %></h2>
+
+    <%= form_for [:admin, @show], validate: true, html: { class: "form", multipart: true } do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, autofocus: true, placeholder: "Show title", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :youtube_url %>
+        <%= f.text_field :youtube_url, placeholder: "Youtube video url", class: "form-control" %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :video %>
+        <% unless @show.video.url.nil? %>
+          <span class="checkbox"><%= f.check_box :remove_video %> Remove</span>
+        <% end %>
+        <div class="form-control custom-file-input">
+          <label for="show_video">Choose Video</label>
+          <%= f.file_field :video %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :thumbnail %>
+        <%= @show.thumbnail.url %>
+        <% unless @show.thumbnail.url.nil? %>
+          <span class="checkbox"><%= f.check_box :remove_video %> Remove</span>
+        <% end %>
+        <div class="form-control custom-file-input">
+          <label for="show_thumbnail">Choose Image</label>
+          <%= f.file_field :thumbnail %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :attachment %>
+        <% unless @show.attachment.url.nil? %>
+          <span class="checkbox"><%= f.check_box :remove_video %> Remove</span>
+        <% end %>
+        <div class="form-control custom-file-input">
+          <label for="show_attachment">Choose File</label>
+          <%= f.file_field :attachment %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, placeholder: "Show description", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Upload", class: "btn btn-extend btn-danger" %>
+      </div>
+    <% end %>
+  </div>
+</div>
