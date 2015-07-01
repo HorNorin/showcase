@@ -1,7 +1,0 @@
-$("#new_show").html("<%= j render 'form_remote', title: 'New Show' %>");
-$("#btn_new_show").hide();
-$("#btn_close_show").on("click", function(e){
-  e.preventDefault();
-  $("#new_show").html("");
-  $("#btn_new_show").show();
-});

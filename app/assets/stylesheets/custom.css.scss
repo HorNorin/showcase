@@ -32,7 +32,7 @@ a {
   }
 }
 
-#header, #main {
+#header, #main, #header a, #main a {
   font-size: 14px;
 }
 
@@ -144,6 +144,53 @@ a {
   }
 }
 
+#infinite-scrolling {
+  text-align: center;
+}
+
+.card {
+  position: relative;
+  margin-bottom: 30px;
+  > a {
+    height: 170px;
+    display: block;
+    border: 1px solid #474747;
+    box-shadow: 0 0 1px #fff;
+    &:hover {
+      border: 1px solid #fff;
+    }
+  }
+  
+  div {
+    height: 100%;
+    background-size: 100% 100%;
+  }
+  
+  h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    a {
+      top: 5px;
+      left: 20px;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      text-transform: capitalize;
+      color: #eee;
+      font-size: 1.285714286em; // 18px / 14px
+      font-weight: bold;
+    }
+    
+    span {
+      font-size: 1em; // 14px / 14px
+      top: 7px;
+      right: 20px;
+      position: absolute;
+    }
+  }
+}
+
 .close {
   font-size: 20px;
   font-weight: bold;
@@ -215,9 +262,6 @@ a {
 
   tr {
     border-bottom: 1px solid #474747;
-    &:last-child {
-      border-bottom: none;
-    }
   }
 
   th, td {
@@ -238,7 +282,31 @@ a {
   }
 
   td {
-    padding: 2px 10px;
+    padding: 5px 10px;
+  }
+}
+
+.btn-add {
+  color: #00AC35;
+  display: block;
+  float: right;
+  margin-top: 10px;
+  &:hover {
+    color: #028A2C;
+  }
+}
+
+.fa-pencil-square-o {
+  color: #00AC35;
+  &:hover {
+    color: #028A2C;
+  }
+}
+
+.fa-trash-o {
+  color: #E92815;
+  &:hover {
+    color: #C92211;
   }
 }
 
@@ -305,18 +373,17 @@ a {
   font-size: 14px;
   padding: 10px;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .flash-success, .flash-notice {
   color: #2C9B2D;
   border-color: $borderColor;
-  background-color: $headerColor;
 }
 
 .flash-error, .flash-alert {
   color: #C9302C;
   border-color: $borderColor;
-  background-color: $headerColor;
 }
 
 .field_with_errors {
@@ -347,7 +414,7 @@ input:-webkit-autofill {
     font-size: 12px;
   }
   
-  #header, #main {
+  #header, #header a, #main, #main a {
     font-size: 12px;
   }
   

@@ -1,5 +1,5 @@
 <nav id="header" class="navbar navbar-inverse navbar-custom">
-  <div class="container-fluid">
+  <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -46,7 +46,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.username %> <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi, <%= current_user.username.capitalize %> <span class="caret"></span></a>
             <ul class="dropdown-menu dropdown-inverse">
               <% unless signed_in_with_omniauth? %>
                 <li><%= link_to "Setting", edit_user_registration_path %></li>
@@ -57,7 +57,7 @@
           </li>
         <% elsif admin_signed_in? %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_admin.username %> <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi, <%= current_admin.username.capitalize %> <span class="caret"></span></a>
             <ul class="dropdown-menu dropdown-inverse">
               <li><%= link_to "Sign Out", sign_out_path %></li>
             </ul>

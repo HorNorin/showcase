@@ -1,7 +1,0 @@
-<% if @show.errors.any? %>
-  $("#new_show").html("<%= j render 'form_remote', title: 'New Show' %>")
-<% else %>
-  $("#all_shows").append("<%= j render @show %>")
-  <% @show = Show.new %>
-  $("#new_show").html("<%= j render 'form_remote', title: 'New Show' %>")
-<% end %>

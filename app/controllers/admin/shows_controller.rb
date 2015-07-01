@@ -11,26 +11,15 @@ class Admin::ShowsController < ApplicationController
   
   def new
     @show = Show.new
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
   
   def create
     @show = Show.new show_params
-    respond_to do |format|
-      @message = "One show has been added."
-      if @show.save
-        format.html do
-          flash[:success] = @message
-          redirect_to new_admin_show_path
-        end
-      else
-        format.html { render "new" }
-      end
-      
-      format.js
+    if @show.save
+      flash[:success] = "One show has been added."
+      redirect_to new_admin_show_path
+    else
+      render "new"
     end
   end
   
@@ -38,21 +27,13 @@ class Admin::ShowsController < ApplicationController
   end
   
   def update
-    respond_to do |format|
-      @message = "One show has been updated."
-      video = @show.video.dup
-      
-      if @show.update_attributes show_params
-        video.remove! if params[:show][:video]
-        format.html do
-          flash[:success] = @message
-          redirect_to admin_shows_path
-        end
-      else
-        format.html { render "edit" }
-      end
-      
-      format.js
+    video = @show.video.dup
+    if @show.update_attributes show_params
+      video.remove! if params[:show][:video]
+      flash[:success] = "One show has been updated."
+      redirect_to admin_shows_path
+    else
+      render "edit"
     end
   end
   
@@ -66,7 +47,7 @@ class Admin::ShowsController < ApplicationController
   private
   
   def show_params
-    params.require(:show).permit :title, :description, :video, :remove_video,
+    params.require(:show).permit :title, :description, :duration, :video, :remove_video,
                                  :youtube_url, :thumbnail, :remove_thumbnail,
                                  :attachment, :remove_attachment
   end

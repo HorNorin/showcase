@@ -5,7 +5,8 @@ class Show < ActiveRecord::Base
   mount_uploader :thumbnail, ThumbnailUploader
   mount_uploader :attachment, AttachmentUploader
   
-  validates_presence_of :title, :description
+  validates_presence_of :title, :description, :duration
+  validates_numericality_of :duration, greater_than: 0
 
   private
 
