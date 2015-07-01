@@ -6,7 +6,7 @@ class Admin::SessionsController < Devise::SessionsController
   end
   
   def create
-    user = User.find_by email: params[:user][:email]
+    user = User.find_by email: params[:admin][:email]
     if user && user.admin?
       super
     else

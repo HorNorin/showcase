@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   
   validates_presence_of :username, unless: :sign_in_with_omniauth?
   validates_presence_of :email, unless: :sign_in_with_omniauth?
-  validates_uniqueness_of :username, unless: :sign_in_with_omniauth?
+  validates_uniqueness_of :username, case_sensitive: false, unless: :sign_in_with_omniauth?
   validates_uniqueness_of :email, unless: :sign_in_with_omniauth?
   validates_format_of :email, with: /\A[^@\s]+@[\w\-_\.]+\.\w{2,4}\z/i, unless: :sign_in_with_omniauth?
   validates_presence_of :password, unless: :sign_in_with_omniauth?
