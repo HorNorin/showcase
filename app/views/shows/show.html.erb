@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div id="video" class="content">
+      <h2><%= @show.title %></h2>
+      
+      <div id="video-container">
+        <% if @show.youtube_url %>
+          <iframe width="640" height="360" src="https://www.youtube.com/embed/<%= YouTubeAddy.extract_video_id @show.youtube_url %>?showinfo=0" frameborder="0" allowfullscreen></iframe>
+        <% end %>
+      </div>
+      
+      <div style="display: none;" id="video-detail">
+        <div id="video-detail-header">
+          <h5>Description</h5>
+          <% file = @show.attachment.file %>
+          <% if file && file.exists? %>
+            <div id="attachment">
+              <span class="glyphicon glyphicon-paperclip"></span>&nbsp;
+              <%= link_to "application_controller.rb", "#" %>
+            </div>
+          <% end %>
+        </div>
+        <p><%= @show.description %></p>
+      </div>
+      
+      <span id="btn-more"><i class="fa fa-chevron-up fa-chevron-down"></i></i></span>
+    </div>
+  </div>
+</div>
+
+<script>
+  $("#btn-more").on("click", function(e){
+    e.preventDefault();
+    $("#video-detail").slideToggle(100);
+    $(this).find("i").toggleClass("fa-chevron-down")
+  });
+</script>

@@ -8,6 +8,11 @@
         <%= f.label :title %>
         <%= f.text_field :title, autofocus: true, placeholder: "Show title", class: "form-control" %>
       </div>
+      
+      <div class="form-group">
+        <%= f.label :duration %>
+        <%= f.text_field :duration, placeholder: "Show duration", class: "form-control" %>
+      </div>
 
       <div class="form-group">
         <%= f.label :youtube_url %>
@@ -27,7 +32,6 @@
 
       <div class="form-group">
         <%= f.label :thumbnail %>
-        <%= @show.thumbnail.url %>
         <% unless @show.thumbnail.url.nil? %>
           <span class="checkbox"><%= f.check_box :remove_video %> Remove</span>
         <% end %>

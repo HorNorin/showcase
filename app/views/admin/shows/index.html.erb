@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-12 col-md-8 col-md-offset-2 group content">
+  <div class="col-xs-12 col-md-6 col-md-offset-3 group content">
     <h2>All Shows</h2>
     <table class="custom-table">
       <thead>
@@ -13,9 +13,6 @@
         <%= render @shows %>
       </tbody>
     </table>
-    <hr />
-    <%= link_to "Add New", new_admin_show_path, id: "btn_new_show", class: "btn btn-primary", remote: true %>
+    <%= link_to "<i class=\"fa fa-lg fa-plus\"></i>".html_safe, new_admin_show_path, id: "btn_new_show", class: "btn-add" %>
   </div>
 </div>
-
-<div id="new_show"></div>
