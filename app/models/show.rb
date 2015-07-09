@@ -3,6 +3,8 @@ require "elasticsearch/model"
 class Show < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
+
+  has_many :comments, dependent: :destroy
   
   validate :check_video
 

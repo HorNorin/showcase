@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     get "/sign_up" => "registrations#new", as: :sign_up
   end
   
-  resources :shows, only: [:index, :show]
+  resources :shows, only: [:index, :show] do
+    resources :comments, only: [:create, :destroy]
+  end
   
   devise_for :admin, class_name: "User", controllers: { sessions: "admin/sessions" }, only: :sessions
   namespace :admin do

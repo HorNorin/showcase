@@ -16,6 +16,7 @@ class ShowsController < ApplicationController
   
   def show
     @show = Show.find params[:id]
+    @comments = @show.comments
   end
   
   # private

@@ -80,7 +80,7 @@ a {
     margin-bottom: 10px;
     border-bottom: 1px solid #202020;
   }
-  
+
   #video-container {
     width: 100%;
     position: relative;
@@ -88,7 +88,7 @@ a {
     padding-top: 30px;
     height: 0;
     overflow:hidden;
-    
+
     iframe {
       position:absolute;
       top:0;
@@ -99,7 +99,7 @@ a {
       box-shadow: 0 0 1px #fff;
     }
   }
-  
+
   #video-detail {
     margin-top: 5px;
     padding: 10px;
@@ -115,7 +115,7 @@ a {
         padding: 0;
         color: #eee;
       }
-      
+
       #attachment {
         float: right;
         margin: 0;
@@ -133,7 +133,7 @@ a {
       }
     }
   }
-  
+
   #btn-more {
     display: block;
     margin-top: 5px;
@@ -153,10 +153,27 @@ div.pagination {
   margin-left: 0;
   margin-bottom: 18px;
   list-style: none;
+}
+
+#comment {
+  width: 640px;
+  margin: 0 auto;
+  h2, h4 {
+    text-align: center;
+  }
+
+  #comment-body {
+    padding: 15px;
+    margin-bottom: 30px;
+  }
+ }
+
+#infinite-scrolling {
   text-align: center;
   *zoom: 1;
   display: block;
 }
+
 .pagination:before,
 .pagination:after {
   display: table;
@@ -219,12 +236,12 @@ div.ng-enter-active {
       border: 1px solid #fff;
     }
   }
-  
+
   div {
     height: 100%;
     background-size: 100% 100%;
   }
-  
+
   h3 {
     margin: 0;
     padding: 0;
@@ -240,7 +257,7 @@ div.ng-enter-active {
       font-size: 1.285714286em; // 18px / 14px
       font-weight: bold;
     }
-    
+
     span {
       font-size: 1em; // 14px / 14px
       top: 7px;
@@ -389,7 +406,7 @@ div.ng-enter-active {
     position: relative;
 }
 .left-inner-addon input {
-    padding-left: 30px;    
+    padding-left: 30px;
 }
 .left-inner-addon span {
     position: absolute;
@@ -472,16 +489,20 @@ input:-webkit-autofill {
   body {
     font-size: 12px;
   }
-  
+
   #header, #header a, #main, #main a {
     font-size: 12px;
   }
-  
+
   #footer {
     font-size: 10px;
   }
-  
+
   #video {
+    width: 100%;
+  }
+
+  #comment {
     width: 100%;
   }
 }
