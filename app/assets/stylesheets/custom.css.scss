@@ -148,6 +148,33 @@ a {
   text-align: center;
 }
 
+.ng-enter {
+  -webkit-transition: 1s;
+  transition: 1s;
+  opacity: 0;
+}
+
+.ng-enter-active {
+  opacity: 1;
+}
+
+.ui-autocomplete {
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+  background-color: $headerColor;
+  max-height: 200px;
+  overflow-y: auto;
+  li {
+    padding: 0 20px;
+  }
+}
+
+.ui-state-focus {
+  cursor: pointer;
+  background-color: $lightBlueColor;
+}
+
 .card {
   position: relative;
   margin-bottom: 30px;

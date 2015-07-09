@@ -37,10 +37,10 @@
           <% end %>
         </li>
       </ul>
-      <%= form_tag "#", class: "navbar-form navbar-left", role: "search" do %>
+      <%= form_tag shows_path, class: "navbar-form navbar-left", id: "search_form", role: "search", method: :get do %>
         <div class="form-group left-inner-addon">
           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-          <%= text_field_tag :search, "", class: "form-control", placeholder: "Search" %>
+          <%= text_field_tag :title, "", class: "form-control", id: "search", "ng-keyup" => "complete()", "ng-model" => "title", placeholder: "Search" %>
         </div>
       <% end %>
       <ul class="nav navbar-nav navbar-right">

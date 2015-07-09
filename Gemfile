@@ -6,6 +6,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -21,6 +22,9 @@ gem 'bootstrap-will_paginate'
 gem 'youtube_addy'
 gem 'remotipart'
 gem 'responsive_images'
+gem 'angularjs-rails'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 gem 'client_side_validations', github: "DavyJonesLocker/client_side_validations", branch: "4-2-stable"
 
 group :development, :test do
