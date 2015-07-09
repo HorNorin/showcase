@@ -1,4 +1,9 @@
+require "elasticsearch/model"
+
 class Show < ActiveRecord::Base
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+  
   validate :check_video
 
   mount_uploader :video, VideoUploader
@@ -33,3 +38,5 @@ class Show < ActiveRecord::Base
     youtube_id && youtube_id.is_a?(String)
   end
 end
+
+Show.import

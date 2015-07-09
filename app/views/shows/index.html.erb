@@ -1,7 +1,10 @@
-<div id="shows"  class="row">
-  <%= render @shows %>
+<div id="shows" ng-controller="ShowsController" class="row">
+  <div ng-show="!show.title">
+    <%= render @shows %>
+  </div>
+  <div search-result-for="show.title" resource="resource" ng-show="show.title"></div>
 </div>
 
-<div id="infinite-scrolling">
+<div id="infinite-scrolling" ng-controller="ShowsController" ng-show="!show.title">
   <%= will_paginate @shows %>
 </div>
