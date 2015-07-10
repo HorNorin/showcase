@@ -12,10 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require bootstrap
 //= require rails.validations
 //= require jquery.remotipart
+//= require angular
+//= require angular-animate
+//= require angular-resource
 //= require_tree .
 
 var ready = function() {
@@ -52,3 +56,7 @@ var ready = function() {
 }
 
 $(document).on('ready page:load page:change page:update', ready);
+
+$(document).on("ready page:load", function() {
+  angular.bootstrap(document.body, ['App']);
+})
