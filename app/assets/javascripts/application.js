@@ -15,9 +15,9 @@
 //= require jquery-ui
 //= require turbolinks
 //= require bootstrap
-//= require rails.validations
 //= require jquery.remotipart
 //= require angular
+//= require angular-messages
 //= require angular-animate
 //= require angular-resource
 //= require_tree .

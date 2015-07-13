@@ -18,4 +18,8 @@ Rails.application.routes.draw do
   
   get "/auth/twitter/callback" => "omniauth_callbacks#twitter"
   get "/auth/facebook/callback" => "omniauth_callbacks#facebook"
+  
+  namespace :api do
+    get 'users/validate_email' => "users#validate_email"
+  end
 end

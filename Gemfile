@@ -25,7 +25,6 @@ gem 'responsive_images'
 gem 'angularjs-rails'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
-gem 'client_side_validations', github: "DavyJonesLocker/client_side_validations", branch: "4-2-stable"
 
 group :development, :test do
   gem 'byebug'
