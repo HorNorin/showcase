@@ -1,1 +1,1 @@
-angular.module("App", ["ngResource", "ngAnimate"]);
+angular.module("App", ["ngResource", "ngAnimate", "ngMessages"]);
