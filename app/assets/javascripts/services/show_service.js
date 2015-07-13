@@ -1,5 +1,5 @@
 angular.module("App").factory("Show", function($resource) {
-  return $resource("/shows.json", {title: "@title"}, {
+  return $resource("/api/shows", {title: "@title"}, {
     search: {
       method: "GET",
       params: {

@@ -11,8 +11,6 @@ class ShowsController < ApplicationController
           @shows = Show.paginate page: params[:page], per_page: 12
         end
       end
-
-      format.json { render json: Show.search(params[:title]).records }
     end
   end
   
