@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   
   namespace :api do
     get 'users/validate_email' => "users#validate_email"
+    resources :shows, only: :index
   end
 end
