@@ -1,0 +1,25 @@
+<div id="shows" ng-controller="SearchController" class="row">
+  <div ng-show="!show.title">
+    <div ng-animate="'animate'" ng-repeat="show in data.shows">
+      <div class="col-xs-6 col-sm-6 col-md-4 card">
+        <h3>
+          <a ng-href="/shows/{{show.id}}">{{show.title}}</a>
+          <span>{{show.duration}}</span>
+        </h3>
+        <a ng-href="/shows/{{show.id}}">
+          <div style="background: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url({{show.thumbnail.url}}); background-size: 100% 100%"></div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div search-result-for="show.title" resource="resource" ng-show="show.title"></div>
+</div>
+
+<div id="infinite-scrolling" ng-controller="SearchController" ng-show="!show.title">
+  <div class="pagination">
+    <ul class="pagination">
+      <li class="prev previous_page" ng-class="{ disabled : data.prevPage == null }"><a href="#" ng-click="click(data.prevPage)">Previous</a></li>
+      <li class="next next_page" ng-class="{ disabled : data.nextPage == null }"><a href="#" ng-click="click(data.nextPage)">Next</a></li>
+    </ul>
+  </div>
+</div>
