@@ -23,8 +23,13 @@ gem 'youtube_addy'
 gem 'remotipart'
 gem 'responsive_images'
 gem 'angularjs-rails'
+gem 'angular_rails_csrf'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+
+source "https://rails-assets.org" do
+  gem "rails-assets-angular-devise"
+end
 
 group :development, :test do
   gem 'byebug'

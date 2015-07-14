@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  root "shows#index"
+  root "home#index"
   
-  devise_for :user, controllers: { registrations: "registrations" }
+  devise_for :user, controllers: { registrations: "registrations", sessions: "sessions" }
   devise_scope :user do
-    get "/sign_in" => "devise/sessions#new", as: :sign_in
+    get "/sign_in" => "sessions#new", as: :sign_in
     get "/sign_out" => "devise/sessions#destroy", as: :sign_out
     get "/sign_up" => "registrations#new", as: :sign_up
   end
@@ -21,6 +21,6 @@ Rails.application.routes.draw do
   
   namespace :api do
     get 'users/validate_email' => "users#validate_email"
-    resources :shows, only: :index
+    resources :shows, only: [:index, :show]
   end
 end

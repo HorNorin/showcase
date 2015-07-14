@@ -1,0 +1,11 @@
+<div ng-animate="'animate'" ng-repeat="show in shows">
+  <div class="col-xs-6 col-sm-6 col-md-4 card">
+    <h3>
+      <a ng-href="/shows/{{show.id}}">{{show.title}}</a>
+      <span>{{show.duration}}</span>
+    </h3>
+    <a ng-href="/shows/{{show.id}}">
+      <div style="background: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url({{show.thumbnail.url}}); background-size: 100% 100%"></div>
+    </a>
+  </div>
+</div>
