@@ -17,9 +17,11 @@
 //= require bootstrap
 //= require jquery.remotipart
 //= require angular
+//= require angular-route
 //= require angular-messages
 //= require angular-animate
 //= require angular-resource
+//= require devise-min
 //= require_tree .
 
 var ready = function() {

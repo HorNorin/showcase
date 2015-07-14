@@ -37,7 +37,7 @@
           <% end %>
         </li>
       </ul>
-      <%= form_tag shows_path, class: "navbar-form navbar-left", id: "search_form", role: "search", method: :get, "ng-controller" => "ShowsController" do %>
+      <%= form_tag shows_path, class: "navbar-form navbar-left", id: "search_form", role: "search", method: :get, "ng-controller" => "SearchController" do %>
         <div class="form-group left-inner-addon">
           <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
           <%= text_field_tag :title, "", class: "form-control", id: "search", "ng-model" => "show.title", placeholder: "Search" %>
